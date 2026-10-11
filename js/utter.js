@@ -129,7 +129,7 @@
   /* ── Safe rendering: text + [label](url) links only ──────── */
   const SAFE_URL = /^(https?:\/\/|mailto:|#|\/|assets\/)/i;
   function renderRich(el, text) {
-    text = text.replace(/\*\*([^*]+)\*\*/g, "$1").replace(/^#+\s*/gm, "");
+    text = text.replace(/\*\*([^*]+)\*\*/g, "$1").replace(/`([^`]+)`/g, "$1").replace(/^#+\s*/gm, "");
     const re = /\[([^\]]+)\]\(([^)\s]+)\)|(https?:\/\/[^\s)]+)/g;
     let last = 0, m;
     while ((m = re.exec(text))) {
@@ -241,6 +241,8 @@
   }
   requestAnimationFrame(frame);
 
+  const track = (name) => { try { if (typeof window.va === "function") window.va("event", { name }); } catch {} };
+
   /* ── Chat ────────────────────────────────────────────────── */
   const history = [];
   const SUGGESTIONS = ["What did you do at AWS?", "Tell me about UtterDB", "What's your research on?", "Top 5 anime?"];
@@ -271,7 +273,7 @@
     if (!text || busy) return;
     busy = true;
     chips.hidden = true;
-    window.va?.("event", { name: "utter_question" });
+    track("utter_question");
     addMsg("user", text);
     history.push({ role: "user", content: text });
     typing(true);
@@ -301,7 +303,7 @@
     root.classList.toggle("is-open", open);
     bubble.hidden = open; // the "hey, chat with me!" bubble is back whenever the chat is closed
     if (open) {
-      window.va?.("event", { name: "utter_open" });
+      track("utter_open");
       greet();
       setTimeout(() => input.focus({ preventScroll: true }), 50);
     } else {
