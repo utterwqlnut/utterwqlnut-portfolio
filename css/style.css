@@ -759,3 +759,71 @@ a.pub__title:hover { text-decoration-color: currentColor; }
 @media (prefers-reduced-motion: reduce) {
   .utter__bubble, .utter__panel, .utter__blob.is-squish, .utter__typing span { animation: none; }
 }
+
+/* ──────────────────────────────────────────────────────────────
+   Phones & tablets polish
+   ────────────────────────────────────────────────────────────── */
+/* notches / home indicator */
+.sticky-bar { padding-top: env(safe-area-inset-top, 0px); }
+.pub__role { justify-self: start; width: fit-content; }
+
+@media (max-width: 900px) {
+  .hero__art { aspect-ratio: 4 / 3; max-width: 620px; }
+  /* tablets: keep the three highlight tiles side by side */
+  .tiles { grid-template-columns: repeat(3, 1fr); max-width: none; gap: 14px; }
+  .tile { padding: 40px 12px 36px; }
+  .tile__title { font-size: 32px; margin-top: -20px; }
+  .tile__badge { font-size: 12px; padding: 5px 8px; }
+  .card__art { aspect-ratio: 4 / 3; }
+  .pubs__head { flex-wrap: wrap; }
+}
+
+@media (max-width: 600px) {
+  /* tighter vertical rhythm */
+  .elsewhere { padding-top: 56px; padding-bottom: 40px; }
+  .zone--paper .experience { padding-top: 72px; }
+  .zone--paper .projects { padding-top: 64px; }
+  .toolkit { padding-top: 72px; }
+  .stack { padding-top: 56px; }
+  .paper-foot { padding: 72px 0 40px; }
+  .contact { margin-bottom: 48px; }
+  .contact__mail { font-size: clamp(26px, 8.4vw, 40px); }
+  .grid3 { row-gap: 48px; }
+
+  /* hero */
+  .hero { gap: 28px; }
+  .hero__art { aspect-ratio: 16 / 11; }
+  .hero__links { gap: 10px 18px; }
+  .hero__links a { font-size: 14px; }
+
+  /* highlight tiles stack but stay short */
+  .tiles { grid-template-columns: 1fr; gap: 12px; }
+  .tile { aspect-ratio: 16 / 10; padding: 26px 16px 22px; }
+  .tile__title { font-size: 38px; margin-top: 0; }
+
+  /* project art: landscape instead of a full-screen square */
+  .card__art { aspect-ratio: 16 / 10; }
+  .card__title { font-size: 34px; }
+
+  /* publications */
+  .pubs__head { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .pubs__title { font-size: 34px; }
+  .pub__title { font-size: 21px; }
+
+  /* footer */
+  .big-foot__art { height: 112px; }
+  .big-foot__inner { padding-top: 128px; }
+  .me__interests { padding-left: 0; }
+
+  /* utter: smaller, clear of the home indicator, bubble fades after a few seconds */
+  .utter { right: calc(10px + env(safe-area-inset-right, 0px)); bottom: calc(10px + env(safe-area-inset-bottom, 0px)); }
+  .utter__blob { width: 60px; height: 64px; }
+  .utter__bubble { right: 40px; bottom: 58px; font-size: 12px; padding: 5px 9px;
+    animation: utter-bob 2.4s ease-in-out infinite, utter-fade .5s ease 6s forwards; }
+  .utter__panel { bottom: calc(80px + env(safe-area-inset-bottom, 0px)); }
+}
+@keyframes utter-fade { to { opacity: 0; visibility: hidden; } }
+
+/* external-link arrow (an SVG, so phones don't swap in an emoji) */
+.hero__links .ext { display: inline-block; width: 9px; height: 9px; margin-left: 4px; vertical-align: 1px; transition: transform .25s var(--ease); }
+.hero__links a:hover .ext { transform: translate(2px, -2px); }
