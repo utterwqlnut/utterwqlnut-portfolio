@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Dhruva Chayapathy — Computer Engineering @ Georgia Tech</title>
+  <meta name="description" content="Dhruva Chayapathy: Computer Engineering at Georgia Tech. Passionate about distributed and ML systems. Previously SDE intern at AWS." />
+  <meta name="theme-color" content="#0000F2" />
+  <meta property="og:title" content="Dhruva Chayapathy" />
+  <meta property="og:description" content="Distributed systems & ML systems." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%223%22 fill=%22%230000f2%22/%3E%3Ctext x=%2216%22 y=%2223%22 font-family=%22Arial Narrow,sans-serif%22 font-size=%2218%22 text-anchor=%22middle%22 fill=%22%23f2f2f2%22%3EDC%3C/text%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Barlow+Condensed:ital,wght@0,400;0,500;0,600;1,500&family=EB+Garamond:wght@400;500&family=Geist+Mono:wght@400;500&family=Geist:wght@300..600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <div class="frame" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Compact header that slides in once you scroll past the hero -->
+  <header class="sticky-bar" data-sticky aria-hidden="true">
+    <div class="wrap sticky-bar__inner">
+      <a href="#top" class="sticky-bar__mark" tabindex="-1"><span data-bind="name">Dhruva Chayapathy</span></a>
+      <nav class="sticky-bar__nav">
+        <a href="#about" tabindex="-1">About</a>
+        <a href="#experience" tabindex="-1">Experience</a>
+        <a href="#projects" tabindex="-1">Projects</a>
+        <a href="#research" tabindex="-1">Research</a>
+        <a href="#contact" class="btn btn--solid btn--sm" tabindex="-1">Get in touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ═════════════════════════  BLUE ZONE  ═════════════════════════ -->
+  <div class="zone zone--blue" id="top">
+
+    <header class="site-header">
+      <nav class="wrap nav" aria-label="Primary">
+        <div class="nav__group nav__group--left">
+          <a href="#about" class="nav__link">About</a>
+          <a href="#experience" class="nav__link">Experience</a>
+          <a href="#projects" class="nav__link">Projects</a>
+        </div>
+
+        <div class="nav__brand">
+          <a href="#top" class="wordmark" aria-label="Home">
+            <span data-bind="wordmark.0">DHRUVA</span>
+            <span data-bind="wordmark.1">CHAYAPATHY</span>
+          </a>
+          <div class="socials">
+            <a data-href="links.github" href="#" aria-label="GitHub" target="_blank" rel="noopener"><svg viewBox="0 0 16 16"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38v-1.49c-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 014 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8 8 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
+            <a data-href="links.linkedin" href="#" aria-label="LinkedIn" target="_blank" rel="noopener"><svg viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M1 1h14v14H1zM3.5 6.2V13h2.2V6.2zm1.1-3.3a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5zM7.2 6.2V13h2.1V9.6c0-.9.2-1.7 1.3-1.7s1.1 1 1.1 1.8V13h2.1V9.3c0-1.8-.4-3.2-2.5-3.2-1 0-1.7.5-2 1.1V6.2z"/></svg></a>
+            <a data-href="email" data-mailto href="#" aria-label="Email"><svg viewBox="0 0 16 16"><path d="M1.5 3.5h13v9h-13z M1.5 3.5L8 9l6.5-5.5" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></a>
+          </div>
+        </div>
+
+        <div class="nav__group nav__group--right">
+          <a href="#research" class="nav__link">Research</a>
+          <a href="#contact" class="nav__link">Contact</a>
+          <div class="dropdown" data-dropdown>
+            <button class="nav__cta" aria-expanded="false" aria-haspopup="true">
+              Resume <svg class="chev" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 4l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+            </button>
+            <div class="dropdown__menu" role="menu">
+              <a role="menuitem" data-href="links.resume" href="#" target="_blank" rel="noopener">View PDF</a>
+              <a role="menuitem" data-href="links.resume" href="#" download="Dhruva_Chayapathy_Resume.pdf">Download</a>
+              <a role="menuitem" data-href="links.linkedin" href="#" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+
+        <button class="nav__burger" aria-label="Open menu" aria-expanded="false" data-burger>
+          <span></span><span></span>
+        </button>
+      </nav>
+
+      <div class="mobile-menu" data-mobile-menu hidden>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#research">Research</a>
+        <a href="#contact">Contact</a>
+        <a data-href="links.resume" href="#" target="_blank" rel="noopener">Resume</a>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- ── HERO ─────────────────────────────────────────── -->
+      <section class="hero wrap">
+        <div class="hero__copy">
+          <p class="eyebrow hero__kicker">Computer Engineering · Georgia Tech ’28 · Atlanta</p>
+          <h1 class="hero__title">
+            <span class="line"><span>Dhruva</span></span>
+            <span class="line"><span>Chayapathy</span></span>
+          </h1>
+          <p class="hero__lede">Distributed + ML systems. I like building software that’s fast and smart. Previously interned at AWS.</p>
+
+          <div class="hero__actions">
+            <a href="#experience" class="btn btn--light">
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 2h5v5H2zM9 2h5v5H9zM2 9h5v5H2zM9 9h5v5H9z" fill="currentColor"/></svg>
+              See my work
+            </a>
+            <a data-href="links.resume" href="#" class="btn btn--ghost" target="_blank" rel="noopener">
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 1.5h5.5L13 5v9.5H4z M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>
+              Résumé
+            </a>
+          </div>
+
+          <ul class="hero__links">
+            <li><a data-href="links.github" href="#" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a></li>
+            <li><a data-href="links.linkedin" href="#" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a></li>
+            <li><a data-href="links.scholar" href="#" target="_blank" rel="noopener">Scholar <span aria-hidden="true">↗</span></a></li>
+            <li><a data-href="email" data-mailto href="#">Email <span aria-hidden="true">↗</span></a></li>
+          </ul>
+        </div>
+
+        <div class="hero__art">
+          <canvas class="art" data-art="explosion" data-seed="7" data-animate="always" data-palette="deep" aria-hidden="true"></canvas>
+        </div>
+      </section>
+
+      <!-- ── ABOUT: FACTS ─────────────────────────────────── -->
+      <section class="showcase wrap" id="about" aria-label="At a glance">
+        <dl class="facts">
+          <div class="fact" data-reveal><dt>300K+</dt><dd>Managed production alarms at AWS</dd></div>
+          <div class="fact" data-reveal><dt data-bind="scholar.citations">24</dt><dd><a data-href="links.scholar" href="#" target="_blank" rel="noopener">Google Scholar citations</a> across 3 papers</dd></div>
+          <div class="fact" data-reveal><dt>100K</dt><dd>Requests / sec on UtterDB at 1ms p50</dd></div>
+          <div class="fact" data-reveal><dt>0.881</dt><dd>ROC-AUC on early disruption prediction</dd></div>
+        </dl>
+      </section>
+
+      <!-- ── HIGHLIGHTS (3 tiles) ─────────────────────────── -->
+      <section class="elsewhere wrap" aria-labelledby="hl-title">
+        <div class="section-head section-head--center" data-reveal>
+          <i class="px" data-pixel="spark" aria-hidden="true"></i>
+          <h2 id="hl-title" class="display">Along the Way</h2>
+          <p class="lede">School, wins, and honors.</p>
+        </div>
+
+        <div class="tiles">
+          <article class="tile" data-reveal>
+            <canvas class="art tile__bg" data-art="bee" data-seed="11" data-palette="mid" data-animate="visible" aria-hidden="true"></canvas>
+            <p class="eyebrow">B.S. Computer Engineering · 2028</p>
+            <h3 class="tile__title">Georgia Tech</h3>
+            <p class="tile__badge">3.8 GPA · Faculty Honors</p>
+          </article>
+
+          <article class="tile" data-reveal>
+            <canvas class="art tile__bg" data-art="museum" data-seed="23" data-palette="mid" data-animate="visible" aria-hidden="true"></canvas>
+            <p class="eyebrow">MLH Hackathon</p>
+            <h3 class="tile__title">HackGT 12</h3>
+            <p class="tile__badge">2nd overall</p>
+          </article>
+
+          <article class="tile" data-reveal>
+            <canvas class="art tile__bg" data-art="duck" data-seed="37" data-palette="mid" data-animate="visible" aria-hidden="true"></canvas>
+            <p class="eyebrow">Quantum hackathon</p>
+            <h3 class="tile__title">MIT iQuHACK</h3>
+            <p class="tile__badge">2nd · QuEra track</p>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- ═════════════════════════  PAPER ZONE  ════════════════════════ -->
+  <div class="zone zone--paper">
+
+    <!-- ── EXPERIENCE ───────────────────────────────────── -->
+    <section class="experience wrap" id="experience" aria-labelledby="exp-title">
+      <div class="section-head section-head--row" data-reveal>
+        <h2 id="exp-title" class="display">Experience <i class="px px--sup" data-pixel="doc" aria-hidden="true"></i></h2>
+        <a data-href="links.resume" href="#" class="link-u" target="_blank" rel="noopener">Full résumé</a>
+      </div>
+
+      <div class="accordion" data-accordion>
+        <div class="acc">
+          <button class="acc__q" aria-expanded="true">
+            <span class="acc__title">Amazon Web Services</span>
+            <span class="acc__meta">SDE Intern · May – Aug 2026</span>
+            <i aria-hidden="true"></i>
+          </button>
+          <div class="acc__a">
+            <div class="acc__inner">
+              <div>
+                <p class="eyebrow">AWS Config / Amazon Dedicated Cloud · Java · TypeScript · AWS CDK</p>
+                <ul class="bullets">
+                  <li>Built a platform to migrate, deploy, and manage <b>300,000+</b> production AWS Config alarms and monitors.</li>
+                  <li>Developed an ETL pipeline that turns raw, messy legacy alarm data into simplified meta-alarm configs.</li>
+                  <li>Engineered team-specific <b>no-op</b> code-gen and CDK pipelines that deploy each team’s regional CloudWatch alarms.</li>
+                  <li>Cut deployments from <b>13-hour</b> legacy cron jobs to <b>under 10 minutes</b> for 10+ AWS Config teams.</li>
+                </ul>
+              </div>
+              <div class="stat"><p class="stat__num">13h → 10m</p><p class="stat__label">Deploy time</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc">
+          <button class="acc__q" aria-expanded="true">
+            <span class="acc__title">MIT Plasma Science &amp; Fusion Center</span>
+            <span class="acc__meta">Research Assistant · Aug 2024 – Dec 2025</span>
+            <i aria-hidden="true"></i>
+          </button>
+          <div class="acc__a">
+            <div class="acc__inner">
+              <div>
+                <p class="eyebrow">Python · PyTorch · JAX · Dask</p>
+                <ul class="bullets">
+                  <li>Ran data exploration and PCA on <b>300M rows</b> of tokamak disruption data using Dask.</li>
+                  <li>Trained PyTorch deep-learning models for early time-series disruption prediction, reaching <b>0.881 ROC-AUC</b>.</li>
+                  <li>Researched generative models to augment disruption datasets, enlarging them by over <b>3×</b>.</li>
+                  <li>Showed that adding synthetic data improves F2 by <b>18.1%</b> in low-data regimes.</li>
+                </ul>
+              </div>
+              <div class="stat"><p class="stat__num">+18.1%</p><p class="stat__label">F2, low-data regime</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc">
+          <button class="acc__q" aria-expanded="true">
+            <span class="acc__title">Georgia Tech Fung Group</span>
+            <span class="acc__meta">Research Assistant · Aug 2024 – Dec 2025</span>
+            <i aria-hidden="true"></i>
+          </button>
+          <div class="acc__a">
+            <div class="acc__inner">
+              <div>
+                <p class="eyebrow">Python · PyTorch · PyTorch Geometric · HuggingFace</p>
+                <ul class="bullets">
+                  <li>Optimized MatDeepLearn GNN pipelines, cutting memory usage by <b>50%</b> with negligible performance loss.</li>
+                  <li>Improved GNN predictive performance by <b>11.5%</b> through feature engineering on crystal-graph embeddings.</li>
+                  <li>Worked on LLM4StructGen, benchmarking 2 LLMs, 4 text representations, and 2 preprocessing configurations.</li>
+                </ul>
+              </div>
+              <div class="stat"><p class="stat__num">−50%</p><p class="stat__label">GNN memory</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PROJECTS ─────────────────────────────────────── -->
+    <section class="projects wrap" id="projects" aria-labelledby="work-title">
+      <div class="section-head section-head--row" data-reveal>
+        <h2 id="work-title" class="display">Projects <i class="px px--sup" data-pixel="eye" aria-hidden="true"></i></h2>
+        <a data-href="links.github" href="#" class="link-u" target="_blank" rel="noopener">All repos</a>
+      </div>
+
+      <div class="grid3">
+        <!--
+          To use a screenshot instead of generative art:
+          <canvas class="art" data-art="image" data-src="assets/shot.png"></canvas>
+        -->
+        <article class="card" data-reveal>
+          <p class="eyebrow">#1 Crypto × ML</p>
+          <h3 class="card__title">dInference</h3>
+          <p class="card__body">A permissionless Solana protocol for verifiable LLM inference. A 256-byte hidden-state fingerprint catches model substitution at 100% TPR / 0% FPR, about 18× faster than re-execution.</p>
+          <p class="card__tech">Python · Rust · PyTorch · Anchor · Solana</p>
+          <a href="https://github.com/utterwqlnut/dInference" class="card__art" target="_blank" rel="noopener" aria-label="dInference on GitHub">
+            <canvas class="art" data-art="network" data-seed="2" data-animate="visible" aria-hidden="true"></canvas>
+          </a>
+        </article>
+
+        <article class="card" data-reveal>
+          <p class="eyebrow">#2 Distributed systems</p>
+          <h3 class="card__title">UtterDB</h3>
+          <p class="card__body">A sharded key-value store in Go: 100K+ req/s at 1ms p50. It has consistent hashing, replica failover, and zero-downtime rebalancing, and survived 150M Locust requests with zero failures.</p>
+          <p class="card__tech">Go · gRPC · Terraform · Locust</p>
+          <a href="https://github.com/utterwqlnut/utterdb" class="card__art" target="_blank" rel="noopener" aria-label="UtterDB on GitHub">
+            <canvas class="art" data-art="hashring" data-seed="17" data-animate="visible" aria-hidden="true"></canvas>
+          </a>
+        </article>
+
+        <article class="card" data-reveal>
+          <p class="eyebrow">#3 Real-time data</p>
+          <h3 class="card__title">Insider Flagger</h3>
+          <p class="card__body">Watches 1,000+ Polymarket markets live and scores traders whose wins are statistically hard to explain. Monte Carlo runs under Numba (3ms per wallet), feeding a Redis leaderboard.</p>
+          <p class="card__tech">Python · FastAPI · asyncio · Numba · Redis</p>
+          <a href="https://github.com/utterwqlnut/polymarket-insiders" class="card__art" target="_blank" rel="noopener" aria-label="Polymarket Insider Flagger on GitHub">
+            <canvas class="art" data-art="montecarlo" data-seed="9" data-animate="visible" aria-hidden="true"></canvas>
+          </a>
+        </article>
+
+        <article class="card" data-reveal>
+          <p class="eyebrow">#4 Forecasting</p>
+          <h3 class="card__title">Kalshi Climate</h3>
+          <p class="card__body">An ensemble temperature forecaster for Kalshi’s daily-high markets. It fits a Gaussian KDE over multi-model forecasts and backtests against observed daily highs.</p>
+          <p class="card__tech">Python · OpenMeteo · SciPy · Streamlit</p>
+          <a href="https://github.com/utterwqlnut/kalshi-climate" class="card__art" target="_blank" rel="noopener" aria-label="Kalshi Climate on GitHub">
+            <canvas class="art" data-art="ensemble" data-seed="31" data-animate="visible" aria-hidden="true"></canvas>
+          </a>
+        </article>
+
+        <article class="card" data-reveal>
+          <p class="eyebrow">#5 Quant finance</p>
+          <h3 class="card__title">Options Pricing</h3>
+          <p class="card__body">An options pricer in C++: Black–Scholes with historical volatility, plus Monte Carlo whose Wiener process samples any user-defined distribution via accept–reject sampling.</p>
+          <p class="card__tech">C++ · Matplot++ · cpr · nlohmann/json</p>
+          <a href="https://github.com/utterwqlnut/options-pricing-tool" class="card__art" target="_blank" rel="noopener" aria-label="Options Pricing Tool on GitHub">
+            <canvas class="art" data-art="options" data-seed="12" data-animate="visible" aria-hidden="true"></canvas>
+          </a>
+        </article>
+
+        <article class="card" data-reveal>
+          <p class="eyebrow">#6 WebAssembly</p>
+          <h3 class="card__title">WASM Analytics</h3>
+          <p class="card__body">A browser-only data-analytics tool: Python and Streamlit running on WebAssembly. Upload a CSV and run commands for smoothing, ACF/PACF, ARIMA, correlation, PCA, and more.</p>
+          <p class="card__tech">Python · Streamlit · stlite · Pyodide</p>
+          <a href="https://github.com/utterwqlnut/wasm_data_analytics" class="card__art" target="_blank" rel="noopener" aria-label="WASM Data Analytics on GitHub">
+            <canvas class="art" data-art="membits" data-seed="14" data-animate="visible" aria-hidden="true"></canvas>
+          </a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ── RESEARCH ─────────────────────────────────────── -->
+    <section class="toolkit wrap" id="research" aria-labelledby="research-title">
+      <ul class="chips" data-reveal>
+        <li>Fusion energy</li><li>Time-series ML</li><li>Graph neural nets</li><li>LLMs for materials</li>
+      </ul>
+
+      <div class="toolkit__head" data-reveal>
+        <h2 id="research-title" class="display">Research <i class="px px--sup" data-pixel="globe" aria-hidden="true"></i></h2>
+        <div class="toolkit__cta">
+          <a href="#publications" class="btn btn--solid">Publications</a>
+          <a data-href="links.scholar" href="#" class="link-u" target="_blank" rel="noopener">Google Scholar</a>
+        </div>
+      </div>
+      <p class="lede lede--ink" data-reveal>ML systems for physical data: predicting plasma disruptions in tokamaks, generating synthetic training data where real data is scarce, and scaling graph and language models for materials.</p>
+
+      <div class="banner" data-reveal>
+        <canvas class="art" data-art="tokamak" data-seed="4" data-animate="visible" data-palette="deep" aria-hidden="true"></canvas>
+      </div>
+
+      <div class="tiers tiers--2">
+        <div class="tier" data-reveal>
+          <p class="tier__name">MIT PSFC <span class="tier__flag">//Fusion</span></p>
+          <p class="tier__num">0.881</p>
+          <p class="tier__unit">ROC-AUC, early disruption prediction</p>
+          <ul class="checks">
+            <li>300M rows of tokamak data</li>
+            <li>PCA &amp; exploration with Dask</li>
+            <li>Time-series deep learning</li>
+            <li>Generative augmentation, 3× data</li>
+            <li>+18.1% F2 in low-data regimes</li>
+          </ul>
+          <a href="https://github.com/utterwqlnut/plasma-data-augmentation" class="btn btn--outline" target="_blank" rel="noopener">View code</a>
+        </div>
+        <div class="tier" data-reveal>
+          <p class="tier__name">GT Fung Group <span class="tier__flag">//Materials</span></p>
+          <p class="tier__num">+11.5%</p>
+          <p class="tier__unit">GNN predictive performance</p>
+          <ul class="checks">
+            <li>MatDeepLearn pipelines</li>
+            <li>50% less memory</li>
+            <li>Crystal-graph feature engineering</li>
+            <li>LLM4StructGen benchmarks</li>
+            <li>PyTorch Geometric · HuggingFace</li>
+          </ul>
+          <div class="tier__btns">
+            <a href="https://github.com/Fung-Lab/MatDeepLearn_dev" class="btn btn--outline" target="_blank" rel="noopener">MatDeepLearn</a>
+            <a href="https://github.com/shuyijia/LLM4StructGen" class="btn btn--outline" target="_blank" rel="noopener">LLM4StructGen</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Publications are rendered from PORTFOLIO.publications in js/config.js -->
+      <div class="pubs" id="publications" data-reveal>
+        <div class="pubs__head">
+          <h3 class="pubs__title">Publications</h3>
+          <p class="eyebrow">3 papers · NeurIPS, ICLR, Springer, JFE</p>
+        </div>
+        <ol class="pubs__list" data-pubs></ol>
+      </div>
+    </section>
+
+    <!-- ── TOOLKIT (compact) ────────────────────────────── -->
+    <section class="stack wrap" aria-labelledby="stack-title">
+      <h2 id="stack-title" class="stack__title" data-reveal>Toolkit</h2>
+      <div class="stack__grid" data-stack data-reveal></div>
+    </section>
+
+    <!-- ── PAPER FOOTER ─────────────────────────────────── -->
+    <footer class="paper-foot" id="contact">
+      <div class="wrap">
+        <div class="contact" data-reveal>
+          <p class="eyebrow">Open to internships, research &amp; collaborations</p>
+          <a class="contact__mail" data-href="email" data-mailto href="#"><span data-bind="email">dchayapathy3@gatech.edu</span></a>
+        </div>
+      </div>
+      <div class="wrap paper-foot__row">
+        <div>
+          <p data-bind="tagline">Distributed + ML systems.</p>
+          <p>© <span data-bind="year">2026</span>, <span data-bind="name">Dhruva Chayapathy</span></p>
+        </div>
+        <div class="paper-foot__right">
+          <p><a data-href="links.github" href="#" target="_blank" rel="noopener">GitHub</a> <span class="sep">|</span> <a data-href="links.linkedin" href="#" target="_blank" rel="noopener">LinkedIn</a></p>
+          <p data-bind="location">Atlanta, GA</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ═════════════════════════  BIG FOOTER  ════════════════════════ -->
+  <footer class="big-foot">
+    <canvas class="art big-foot__art" data-art="interests" data-seed="21" data-palette="deep" data-cell="1.5" data-animate="visible" aria-hidden="true"></canvas>
+    <div class="big-foot__inner wrap">
+      <div class="big-foot__grid">
+        <div class="big-foot__brand">
+          <div class="me">
+            <img class="foot-pfp" src="assets/pfp.jpg" alt="Dhruva Chayapathy" width="300" height="400" loading="lazy" />
+            <div class="me__text">
+              <p class="me__name" data-bind="name">Dhruva Chayapathy</p>
+              <p class="me__role">Computer Engineering</p>
+              <p class="me__meta">Georgia Tech ’28 · <span data-bind="location">Atlanta, GA</span></p>
+            </div>
+          </div>
+          <div class="me__interests">
+            <p class="fcol__kicker">Interests</p>
+            <ul class="interest-list">
+              <li>Sports</li>
+              <li>Anime</li>
+              <li>Music</li>
+              <li>Video games</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="fcol">
+          <p class="fcol__kicker">Index</p>
+          <p class="fcol__title">About</p>
+          <a href="#about">At a glance</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#research">Research</a>
+        </div>
+        <div class="fcol">
+          <p class="fcol__kicker">Selected</p>
+          <p class="fcol__title">Work</p>
+          <a href="https://github.com/utterwqlnut/dInference" target="_blank" rel="noopener">dInference</a>
+          <a href="https://github.com/utterwqlnut/utterdb" target="_blank" rel="noopener">UtterDB</a>
+          <a href="https://github.com/utterwqlnut/polymarket-insiders" target="_blank" rel="noopener">Insider Flagger</a>
+          <a href="https://github.com/utterwqlnut/kalshi-climate" target="_blank" rel="noopener">Kalshi Climate</a>
+        </div>
+        <div class="fcol">
+          <p class="fcol__kicker">Elsewhere</p>
+          <p class="fcol__title">Online</p>
+          <a data-href="links.github" href="#" target="_blank" rel="noopener"><span>Go to</span> GitHub</a>
+          <a data-href="links.linkedin" href="#" target="_blank" rel="noopener"><span>Go to</span> LinkedIn</a>
+        </div>
+        <div class="fcol">
+          <p class="fcol__kicker">Say hello</p>
+          <p class="fcol__title">Contact</p>
+          <a data-href="email" data-mailto href="#">Email</a>
+          <a data-href="links.resume" href="#" target="_blank" rel="noopener">Résumé</a>
+          <a href="#top">Back to top</a>
+        </div>
+      </div>
+
+      <div class="big-foot__base">
+        <div class="socials socials--lg">
+          <a data-href="links.github" href="#" aria-label="GitHub" target="_blank" rel="noopener"><svg viewBox="0 0 16 16"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38v-1.49c-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 014 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8 8 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
+          <a data-href="links.linkedin" href="#" aria-label="LinkedIn" target="_blank" rel="noopener"><svg viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M1 1h14v14H1zM3.5 6.2V13h2.2V6.2zm1.1-3.3a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5zM7.2 6.2V13h2.1V9.6c0-.9.2-1.7 1.3-1.7s1.1 1 1.1 1.8V13h2.1V9.3c0-1.8-.4-3.2-2.5-3.2-1 0-1.7.5-2 1.1V6.2z"/></svg></a>
+          <a data-href="email" data-mailto href="#" aria-label="Email"><svg viewBox="0 0 16 16"><path d="M1.5 3.5h13v9h-13z M1.5 3.5L8 9l6.5-5.5" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></a>
+        </div>
+        <p>© <span data-bind="year">2026</span> <span data-bind="name">Dhruva Chayapathy</span></p>
+        <p class="dim">Hand-built</p>
+        <p class="dim" data-bind="location">Atlanta, GA</p>
+        <p><a data-href="email" data-mailto href="#">Email</a> <span class="sep">|</span> <a href="#top">Top</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/art.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/utter.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "name": "utterwqlnut-portfolio",
+  "private": true,
+  "type": "module",
+  "description": "Portfolio site. Static files are served as-is; /api/chat powers Utter, the chat blob.",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.133.0"
+  }
+}
