@@ -7,7 +7,8 @@ export const KNOWLEDGE = `
 ## Summary
 - Computer Engineering (B.S.) student at Georgia Tech, expected May 2028. GPA 3.8, Faculty Honors.
 - Georgia Tech threads: Distributed Systems & Software Design, Systems & Architecture.
-- Based in Atlanta, GA.
+- Lives in Atlanta, GA. Went to Alpharetta High School, now at Georgia Tech.
+- Pronouns: he/him.
 - Passionate about distributed and ML systems: infrastructure that stays fast and correct under load.
 - Most recently a Software Development Engineering intern at Amazon Web Services.
 

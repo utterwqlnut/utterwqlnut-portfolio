@@ -25,7 +25,7 @@ Two problems are involved. Both are about predicting or generating crystalline m
 - **Structure generation (LLM4StructGen).** LLMs can be fine-tuned to generate new crystals written out as text. The open question is which text format works best.
 
 ## Architecture
-**MatDeepLearn** is the Fung Lab's shared GNN framework for materials property prediction (1,800+ commits across the lab). Dhruva contributed to it through PR #68 from their fork. How the framework works:
+**MatDeepLearn** is the Fung Lab's shared GNN framework for materials property prediction (1,800+ commits across the lab). Dhruva contributed to it through PR #68 from his fork. How the framework works:
 ```
 config.yml ─► main.py (Runner) ─► processor.py: structures → PyG Data graphs
                                    ├─ calculate_edges_master (mdl | ocp)

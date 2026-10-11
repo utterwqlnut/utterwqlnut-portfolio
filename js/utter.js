@@ -17,12 +17,12 @@
   /* ── Built-in answers (fallback) ─────────────────────────── */
   const KB = [
     { keys: ["hi", "hello", "hey", "yo", "sup", "howdy"], a: "Hey! Ask me anything about Dhruva: experience, projects, research, or interests." },
-    { keys: ["who are you", "what are you", "utter", "your name"], a: "I'm utter, a small blob who knows all about Dhruva. Ask me about their work, research, or what they're into!" },
+    { keys: ["who are you", "what are you", "utter", "your name"], a: "I'm utter, a small blob who knows all about Dhruva. Ask me about his work, research, or what he's into!" },
     { keys: ["thanks", "thank you", "thx", "ty"], a: "Anytime! Anything else you want to know about Dhruva?" },
     { keys: ["about", "who is", "tell me about yourself", "tell me about dhruva", "background", "summary", "introduce"],
       a: "Dhruva is a Computer Engineering student at Georgia Tech (class of 2028, 3.8 GPA) who's passionate about distributed and ML systems. Most recently an SDE intern at AWS, with research at MIT's Plasma Science & Fusion Center and Georgia Tech's Fung Group." },
     { keys: ["school", "college", "university", "georgia tech", "gatech", "gpa", "major", "degree", "graduate", "graduation", "study", "studying", "education", "class of", "threads"],
-      a: "Dhruva studies Computer Engineering at Georgia Tech, graduating May 2028 with a 3.8 GPA and Faculty Honors. Their threads are Distributed Systems & Software Design and Systems & Architecture." },
+      a: "Dhruva studies Computer Engineering at Georgia Tech, graduating May 2028 with a 3.8 GPA and Faculty Honors. His threads are Distributed Systems & Software Design and Systems & Architecture." },
     { keys: ["experience", "work history", "jobs", "job", "internships", "worked", "career"],
       a: "Three roles so far: SDE intern at AWS (2026), research assistant at MIT's Plasma Science & Fusion Center, and research assistant in Georgia Tech's Fung Group (both 2024–25). Ask about any of them for details!" },
     { keys: ["aws", "amazon", "sde", "alarms", "cloudwatch", "aws config", "cdk", "intern at"],
@@ -67,7 +67,7 @@
     { keys: ["where", "location", "live", "based", "atlanta"], a: "Dhruva is based in Atlanta, GA." },
   ];
 
-  const OFF_TOPIC = "I only know about Dhruva, but I'm happy to tell you about their projects, research, or interests!";
+  const OFF_TOPIC = "I only know about Dhruva, but I'm happy to tell you about his projects, research, or interests!";
   const UNKNOWN = `Hmm, I'm not sure about that one. I know Dhruva's experience, projects, research, and interests. For anything else, email ${md(EMAIL, `mailto:${EMAIL}`)}.`;
 
   const norm = (s) => s.toLowerCase().replace(/[’']/g, "").replace(/[^a-z0-9+#.\s-]/g, " ").replace(/\s+/g, " ").trim();
@@ -288,7 +288,7 @@
   function greet() {
     if (greeted) return;
     greeted = true;
-    addMsg("bot", `Hi, I'm ${AGENT.name}! I know all about Dhruva: experience, projects, research, and what they're into. What do you want to know?`);
+    addMsg("bot", `Hi, I'm ${AGENT.name}! I know all about Dhruva: experience, projects, research, and what he's into. What do you want to know?`);
     SUGGESTIONS.forEach((s) => {
       const b = document.createElement("button");
       b.type = "button"; b.className = "utter__chip"; b.textContent = s;

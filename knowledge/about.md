@@ -14,11 +14,12 @@ links:
 # About Dhruva
 
 ## TL;DR
-Dhruva Chayapathy is a Computer Engineering student at Georgia Tech (expected May 2028, 3.8 GPA, Faculty Honors) based in Atlanta. They're passionate about distributed and ML systems: infrastructure that stays fast and correct under load. Most recently they were an SDE intern at AWS. Before that they did research at MIT's Plasma Science & Fusion Center and Georgia Tech's Fung Group, which produced three papers with 24 citations on Google Scholar.
+Dhruva Chayapathy is a Computer Engineering student at Georgia Tech (expected May 2028, 3.8 GPA, Faculty Honors) who lives in Atlanta, GA. He's passionate about distributed and ML systems: infrastructure that stays fast and correct under load. Most recently he was an SDE intern at AWS. Before that he did research at MIT's Plasma Science & Fusion Center and Georgia Tech's Fung Group, which produced three papers with 24 citations on Google Scholar.
 
 ## Education
 - **Georgia Institute of Technology:** B.S. Computer Engineering, expected May 2028. GPA 3.8. Faculty Honors.
 - **Threads:** Distributed Systems & Software Design; Systems & Architecture.
+- **Alpharetta High School:** attended before Georgia Tech.
 
 ## Experience at a glance
 | Role | Org | Dates | Doc |
@@ -70,4 +71,4 @@ Dhruva Chayapathy is a Computer Engineering student at Georgia Tech (expected Ma
 - Open to internships, research, and collaborations.
 
 ## Sources
-- Dhruva's résumé and Google Scholar profile; Dhruva's own description of their interests.
+- Dhruva's résumé and Google Scholar profile; Dhruva's own description of his interests.
