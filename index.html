@@ -478,6 +478,15 @@
     </div>
   </footer>
 
+  <!-- Vercel Web Analytics (enable it in the Vercel dashboard → Analytics). Skipped on localhost. -->
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    if (!/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) {
+      var va = document.createElement("script");
+      va.defer = true; va.src = "/_vercel/insights/script.js";
+      document.head.appendChild(va);
+    }
+  </script>
   <script src="js/config.js"></script>
   <script src="js/art.js"></script>
   <script src="js/main.js"></script>

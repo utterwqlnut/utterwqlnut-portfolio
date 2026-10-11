@@ -209,6 +209,7 @@ export default async function handler(req, res) {
         .map((b) => b.text)
         .join("")
         .trim();
+      console.log(JSON.stringify({ event: "utter_question", q: messages.filter((m) => typeof m.content === "string").at(-1)?.content.slice(0, 200), tools: toolsUsed, turns: messages.length }));
       return res.status(200).json({ reply: reply || EMPTY_REPLY, tools: toolsUsed });
     }
     return res.status(200).json({ reply: EMPTY_REPLY });

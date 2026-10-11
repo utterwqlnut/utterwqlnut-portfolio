@@ -271,6 +271,7 @@
     if (!text || busy) return;
     busy = true;
     chips.hidden = true;
+    window.va?.("event", { name: "utter_question" });
     addMsg("user", text);
     history.push({ role: "user", content: text });
     typing(true);
@@ -300,6 +301,7 @@
     root.classList.toggle("is-open", open);
     bubble.hidden = open; // the "hey, chat with me!" bubble is back whenever the chat is closed
     if (open) {
+      window.va?.("event", { name: "utter_open" });
       greet();
       setTimeout(() => input.focus({ preventScroll: true }), 50);
     } else {
