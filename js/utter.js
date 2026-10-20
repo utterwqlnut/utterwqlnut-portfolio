@@ -241,7 +241,10 @@
   }
   requestAnimationFrame(frame);
 
-  const track = (name) => { try { if (typeof window.va === "function") window.va("event", { name }); } catch {} };
+  const track = (name) => {
+    try { if (typeof window.va === "function") window.va("event", { name }); } catch {}
+    try { if (typeof window.umami?.track === "function") window.umami.track(name); } catch {}
+  };
 
   /* ── Chat ────────────────────────────────────────────────── */
   const history = [];

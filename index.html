@@ -488,7 +488,7 @@
     </div>
   </footer>
 
-  <!-- Vercel Web Analytics (enable it in the Vercel dashboard →︎ Analytics). Skipped on localhost. -->
+  <!-- Analytics: Vercel Web Analytics (country) + Umami Cloud (city, see cloud.umami.is → Locations). Skipped on localhost. -->
   <script>
     window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
     if (!/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) {
@@ -496,6 +496,12 @@
         var tag = document.createElement("script"); // scoped: a global named "va" would overwrite window.va
         tag.defer = true; tag.src = "/_vercel/insights/script.js";
         document.head.appendChild(tag);
+
+        var umami = document.createElement("script");
+        umami.defer = true; umami.src = "https://cloud.umami.is/script.js";
+        umami.setAttribute("data-website-id", "b2b407cd-b38e-46c1-bf32-e004ecf1808a");
+        umami.setAttribute("data-domains", "utterwqlnut.vercel.app"); // ignore preview deploys
+        document.head.appendChild(umami);
       })();
     }
   </script>
