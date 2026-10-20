@@ -2,7 +2,7 @@
  * Generative "engraving" art.
  *
  * Every <canvas class="art" data-art="scene"> is drawn in grayscale by a
- * scene function, then error-diffusion dithered into a 4-tone blue palette.
+ * scene function, then error-diffusion dithered into a 4-tone palette.
  * That is what gives the site its printed / halftone look without shipping
  * any image files.
  *
@@ -10,7 +10,7 @@
  *   data-art      scene name (see SCENES below) or "image"
  *   data-src      image URL when data-art="image" (your own screenshots)
  *   data-seed     integer, changes the composition
- *   data-palette  deep | blue | mid
+ *   data-palette  deep | blue | mid  (colors come from --art-* in css/style.css)
  *   data-cell     CSS pixels per dithered dot (default 2)
  *   data-animate  always | visible | hover   (omit for static)
  *   data-text     text for the "type" scene
@@ -18,15 +18,17 @@
 (() => {
   const TAU = Math.PI * 2;
 
-  const PALETTES = {
-    deep: ["#0000f2", "#2525f4", "#7272f8", "#efefff"],
-    blue: ["#0000dc", "#2a2af3", "#7676f9", "#f2f2ff"],
-    mid: ["#3d3df5", "#5858f7", "#8484f9", "#d6d6fd"],
-  };
+  // Palettes live in CSS (--art-deep / --art-blue / --art-mid in css/style.css).
+  const PALETTE_NAMES = ["deep", "blue", "mid"];
   const hex = (h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16));
-  const PAL_RGB = Object.fromEntries(
-    Object.entries(PALETTES).map(([k, v]) => [k, v.map(hex)])
-  );
+  let PAL_RGB = {};
+  function readPalettes() {
+    const cs = getComputedStyle(document.documentElement);
+    PAL_RGB = Object.fromEntries(PALETTE_NAMES.map((k) => [
+      k, cs.getPropertyValue(`--art-${k}`).split(",").map((c) => hex(c.trim())),
+    ]));
+  }
+  readPalettes();
 
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -1634,7 +1636,7 @@
       this.ctx = el.getContext("2d", { willReadFrequently: true });
       this.name = el.dataset.art;
       this.seed = parseInt(el.dataset.seed || "1", 10);
-      this.palette = PAL_RGB[el.dataset.palette] || PAL_RGB.blue;
+      this.paletteName = PAL_RGB[el.dataset.palette] ? el.dataset.palette : "blue";
       this.cell = parseFloat(el.dataset.cell || "2");
       this.animate = reduceMotion ? null : el.dataset.animate || null;
       this.contrast = parseFloat(el.dataset.contrast || "1");
@@ -1706,7 +1708,7 @@
       }
 
       try {
-        dither(ctx, W, H, this.palette, {
+        dither(ctx, W, H, PAL_RGB[this.paletteName], {
           contrast: this.contrast,
           bias: this.bias,
           rand: mulberry32(this.seed * 31 + this.frame),
@@ -1726,7 +1728,7 @@
       img.style.cssText =
         "width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.2);mix-blend-mode:screen;display:block";
       const wrap = document.createElement("div");
-      wrap.style.cssText = "width:100%;height:100%;background:#0000f2";
+      wrap.style.cssText = "width:100%;height:100%;background:var(--brand)";
       wrap.appendChild(img);
       this.el.replaceWith(wrap);
     }
