@@ -35,6 +35,7 @@ const DOC_INDEX = [...DOCS.values()].map((d) => `- ${d.id}: ${d.title}. ${d.summ
 /* ── GitHub repos utter may read ──────────────────────────── */
 const REPOS = [
   "utterwqlnut/dInference",
+  "utterwqlnut/muse_bf16_proj",
   "utterwqlnut/utterdb",
   "utterwqlnut/polymarket-insiders",
   "utterwqlnut/kalshi-climate",

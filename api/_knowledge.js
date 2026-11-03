@@ -45,6 +45,7 @@ Stack: Python, PyTorch, PyTorch Geometric, HuggingFace.
 
 ## Projects
 - dInference (https://github.com/utterwqlnut/dInference): a permissionless Solana protocol for verifiable LLM inference on open-source models. A 256-byte PyTorch hidden-state fingerprint verifies a response came from the claimed model; it detected model substitution at 100% TPR / 0% FPR over 1,500 samples (including same-family downsizing) and verifies in one forward pass, about 18x faster than re-execution, with 1.3% provider overhead. Stack: Python, Rust, PyTorch, Anchor, Solana, Walrus.
+- Muse Spark GPU Kernel Optimization (https://github.com/utterwqlnut/muse_bf16_proj): hand-tuned the projection kernels of Muse Spark, an 816B-parameter mixture-of-experts model, reaching 1.35x the speed of SGLang's production kernels on an NVIDIA H200 (geometric mean over the scored shapes). A lossless 12-bit weight compression with a CUDA GEMV kernel for skinny (single-token) matrices runs 1.5-1.8x over cuBLAS; hand-written Hopper TMA + wgmma kernels with split-K across thread-block clusters handle small batches; fused FP32-exact routing kernels run 2-4x faster than SGLang, tuned per shape with Bayesian (Optuna) search. Stack: Python, C++, CUDA, Triton, PyTorch.
 - UtterDB (https://github.com/utterwqlnut/utterdb): a distributed key-value store in Go reaching 100,000+ req/s at 1ms end-to-end p50 latency. Consistent hashing, a Terraform-provisioned multi-node cluster, a control plane with heartbeating, replica failover and zero-downtime rebalancing; stress-tested with Locust over 150 million requests with 0 read/write failures. Stack: Go, gRPC, Terraform, Locust.
 - Polymarket Insider Flagger (https://github.com/utterwqlnut/polymarket-insiders): a real-time pipeline that ingests trades from 1,000+ Polymarket markets and flags wallets whose results are statistically hard to explain, using Monte Carlo simulation. Numba JIT brings wallet analysis to 3ms; a Redis sorted-set leaderboard is served through FastAPI. Stack: Python, FastAPI, asyncio, Numba, Redis.
 - Kalshi Climate (https://github.com/utterwqlnut/kalshi-climate): an ensemble temperature forecaster for Kalshi's daily-high markets. Fits a Gaussian KDE over multi-model forecasts (OpenMeteo) and backtests against observed daily highs (NOAA), with a Streamlit UI.
@@ -66,7 +67,7 @@ Google Scholar: 24 citations, h-index 3.
 - Languages: Python, Go, Java, C++, TypeScript, Rust, SQL
 - Infrastructure: AWS (EC2, S3, Lambda, CDK and more), Docker, Linux, Terraform, gRPC
 - Data: PostgreSQL, Redis, Dask, Pandas, NumPy
-- Machine learning: PyTorch, JAX, HuggingFace, TensorFlow
+- Machine learning: PyTorch, CUDA, Triton, JAX, HuggingFace, TensorFlow
 - Web & tools: React, Next.js, Django, Flask, FastAPI, Hono, Git, Vercel
 
 ## Interests (outside of work)

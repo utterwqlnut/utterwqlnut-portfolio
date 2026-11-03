@@ -1,0 +1,7 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "site", "runtimeExecutable": "node", "runtimeArgs": ["dev-server.mjs"], "port": 4174 },
+    { "name": "site-analytics", "runtimeExecutable": "env", "runtimeArgs": ["PORT=4176", "node", "--env-file=.env", "dev-server.mjs"], "port": 4176 }
+  ]
+}

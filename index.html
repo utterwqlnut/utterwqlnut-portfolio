@@ -137,9 +137,9 @@
       <section class="showcase wrap" id="about" aria-label="At a glance">
         <dl class="facts">
           <div class="fact" data-reveal><dt>300K+</dt><dd>Managed production alarms at AWS</dd></div>
+          <div class="fact" data-reveal><dt>1.35×</dt><dd>Speedup of Muse Spark projection kernels over SGLang</dd></div>
           <div class="fact" data-reveal><dt data-bind="scholar.citations">24</dt><dd><a data-href="links.scholar" href="#" target="_blank" rel="noopener">Google Scholar citations</a> across 3 papers</dd></div>
           <div class="fact" data-reveal><dt>100K</dt><dd>Requests / sec on UtterDB at 1ms p50</dd></div>
-          <div class="fact" data-reveal><dt>0.881</dt><dd>ROC-AUC on early disruption prediction</dd></div>
         </dl>
       </section>
 
@@ -278,7 +278,17 @@
         </article>
 
         <article class="card" data-reveal>
-          <p class="eyebrow">#2 Distributed systems</p>
+          <p class="eyebrow">#2 GPU kernels</p>
+          <h3 class="card__title">Muse Spark Kernels</h3>
+          <p class="card__body">Custom projection kernels for Muse Spark, an 816B mixture-of-experts model, running 1.35× faster than SGLang’s on an H200. A lossless 12-bit weight format beats cuBLAS by 1.5–1.8×, and routing runs 2–4× faster.</p>
+          <p class="card__tech">CUDA · C++ · Triton · PyTorch · Python</p>
+          <a href="https://github.com/utterwqlnut/muse_bf16_proj" class="card__art" target="_blank" rel="noopener" aria-label="Muse Spark Kernels on GitHub">
+            <canvas class="art" data-art="gemm" data-seed="8" data-animate="visible" aria-hidden="true"></canvas>
+          </a>
+        </article>
+
+        <article class="card" data-reveal>
+          <p class="eyebrow">#3 Distributed systems</p>
           <h3 class="card__title">UtterDB</h3>
           <p class="card__body">A sharded key-value store in Go: 100K+ req/s at 1ms p50. It has consistent hashing, replica failover, and zero-downtime rebalancing, and survived 150M Locust requests with zero failures.</p>
           <p class="card__tech">Go · gRPC · Terraform · Locust</p>
@@ -288,7 +298,7 @@
         </article>
 
         <article class="card" data-reveal>
-          <p class="eyebrow">#3 Real-time data</p>
+          <p class="eyebrow">#4 Real-time data</p>
           <h3 class="card__title">Insider Flagger</h3>
           <p class="card__body">Watches 1,000+ Polymarket markets live and scores traders whose wins are statistically hard to explain. Monte Carlo runs under Numba (3ms per wallet), feeding a Redis leaderboard.</p>
           <p class="card__tech">Python · FastAPI · asyncio · Numba · Redis</p>
@@ -298,7 +308,7 @@
         </article>
 
         <article class="card" data-reveal>
-          <p class="eyebrow">#4 Forecasting</p>
+          <p class="eyebrow">#5 Forecasting</p>
           <h3 class="card__title">Kalshi Climate</h3>
           <p class="card__body">An ensemble temperature forecaster for Kalshi’s daily-high markets. It fits a Gaussian KDE over multi-model forecasts and backtests against observed daily highs.</p>
           <p class="card__tech">Python · OpenMeteo · SciPy · Streamlit</p>
@@ -308,7 +318,7 @@
         </article>
 
         <article class="card" data-reveal>
-          <p class="eyebrow">#5 Quant finance</p>
+          <p class="eyebrow">#6 Quant finance</p>
           <h3 class="card__title">Options Pricing</h3>
           <p class="card__body">An options pricer in C++: Black–Scholes with historical volatility, plus Monte Carlo whose Wiener process samples any user-defined distribution via accept–reject sampling.</p>
           <p class="card__tech">C++ · Matplot++ · cpr · nlohmann/json</p>
@@ -317,15 +327,6 @@
           </a>
         </article>
 
-        <article class="card" data-reveal>
-          <p class="eyebrow">#6 WebAssembly</p>
-          <h3 class="card__title">WASM Analytics</h3>
-          <p class="card__body">A browser-only data-analytics tool: Python and Streamlit running on WebAssembly. Upload a CSV and run commands for smoothing, ACF/PACF, ARIMA, correlation, PCA, and more.</p>
-          <p class="card__tech">Python · Streamlit · stlite · Pyodide</p>
-          <a href="https://github.com/utterwqlnut/wasm_data_analytics" class="card__art" target="_blank" rel="noopener" aria-label="WASM Data Analytics on GitHub">
-            <canvas class="art" data-art="membits" data-seed="14" data-animate="visible" aria-hidden="true"></canvas>
-          </a>
-        </article>
 
       </div>
     </section>
@@ -455,9 +456,9 @@
           <p class="fcol__kicker">Selected</p>
           <p class="fcol__title">Work</p>
           <a href="https://github.com/utterwqlnut/dInference" target="_blank" rel="noopener">dInference</a>
+          <a href="https://github.com/utterwqlnut/muse_bf16_proj" target="_blank" rel="noopener">Muse Spark Kernels</a>
           <a href="https://github.com/utterwqlnut/utterdb" target="_blank" rel="noopener">UtterDB</a>
           <a href="https://github.com/utterwqlnut/polymarket-insiders" target="_blank" rel="noopener">Insider Flagger</a>
-          <a href="https://github.com/utterwqlnut/kalshi-climate" target="_blank" rel="noopener">Kalshi Climate</a>
         </div>
         <div class="fcol">
           <p class="fcol__kicker">Elsewhere</p>

@@ -616,6 +616,75 @@
       ctx.fillStyle = "#000"; ctx.fillRect(cx - R * 0.07, cy - 0.5, R * 0.14, 1); ctx.fillRect(cx - 0.5, cy - R * 0.07, 1, R * 0.14);
     },
 
+    // Muse Spark: a skinny GEMM, split-K across a cluster, tiles streaming in and partials reduced into y
+    gemm(ctx, W, H, o) {
+      const { t } = o;
+      hatch(ctx, 0, 0, W, H, 4, 0.08);
+      const KT = 16, RT = 10, S = 4, KS = KT / S;
+      const gx = W * 0.1, gy = H * 0.26, gw = W * 0.66, gh = H * 0.62;
+      const tw = gw / KT, th = gh / RT, xh = th * 0.7;
+      const P = 1.1, row = Math.floor(t / P) % RT, ph = (t / P) % 1;
+      const kk = Math.min(KS - 1, Math.floor(ph * 1.25 * KS)); // pipeline stage within each split
+      const reducing = ph > 0.8;
+
+      // W: row tiles; finished rows dim, the active row loads one k-tile per split at a time
+      for (let r = 0; r < RT; r++) {
+        for (let c = 0; c < KT; c++) {
+          let l = r < row ? 0.38 : 0.2;
+          if (r === row) l = c % KS < kk ? 0.62 : c % KS === kk && !reducing ? 1 : 0.3;
+          const v = Math.round(l * 255);
+          ctx.fillStyle = `rgb(${v},${v},${v})`;
+          ctx.fillRect(gx + c * tw + 1, gy + r * th + 1, tw - 2, th - 2);
+          // packed 12-bit weights: a sparse bit texture per tile
+          const rr = mulberry32(r * 977 + c * 131 + o.seed);
+          ctx.fillStyle = r === row ? "rgba(0,0,0,.35)" : "rgba(0,0,0,.3)";
+          for (let b = 0; b < 4; b++) ctx.fillRect(gx + c * tw + 2 + rr() * (tw - 5), gy + r * th + 2 + rr() * (th - 5), 1.5, 1.5);
+        }
+      }
+
+      // x (transposed) above W, the k-tiles in flight highlighted, with TMA copies dropping in
+      const xy = gy - xh - 10;
+      for (let c = 0; c < KT; c++) {
+        const hot = c % KS === kk && !reducing;
+        hatch(ctx, gx + c * tw + 1, xy, tw - 2, xh, 2, hot ? 0.95 : 0.4);
+        if (hot) {
+          const cx = gx + c * tw + tw / 2, y1 = gy + row * th;
+          ctx.setLineDash([1, 2]); ctx.strokeStyle = "rgba(255,255,255,.8)"; ctx.lineWidth = 0.8;
+          line(ctx, cx, xy + xh + 2, cx, y1);
+          ctx.setLineDash([]);
+          const py = xy + xh + (y1 - xy - xh) * ((ph * 1.25 * KS) % 1);
+          ctx.fillStyle = "#fff"; ctx.fillRect(cx - 1, py - 1, 2, 2);
+        }
+      }
+
+      // split-K boundaries (one CTA of the cluster each)
+      ctx.setLineDash([2, 3]); ctx.strokeStyle = "rgba(255,255,255,.55)"; ctx.lineWidth = 0.8;
+      for (let s = 1; s < S; s++) line(ctx, gx + s * KS * tw, xy - 4, gx + s * KS * tw, gy + gh + 4);
+      ctx.setLineDash([]);
+      ctx.strokeStyle = "#fff"; ctx.lineWidth = 1;
+      ctx.strokeRect(gx + 0.5, gy + 0.5 + row * th, gw - 1, th - 1);
+
+      // y: rows fill once their split partials are summed over DSMEM
+      const yx = gx + gw + W * 0.07, yw = tw * 1.2;
+      for (let r = 0; r < RT; r++) {
+        const done = r < row || (r === row && reducing);
+        hatch(ctx, yx, gy + r * th + 1, yw, th - 2, 2, done ? 0.85 : 0.18);
+      }
+      ctx.strokeStyle = "rgba(255,255,255,.7)"; ctx.lineWidth = 0.8;
+      ctx.strokeRect(yx - 0.5, gy - 0.5, yw + 1, gh + 1);
+      if (reducing) {
+        const q = (ph - 0.8) / 0.2, ty = gy + row * th + th / 2;
+        ctx.strokeStyle = "#fff"; ctx.fillStyle = "#fff";
+        for (let s = 0; s < S; s++) {
+          const sx = gx + (s + 0.5) * KS * tw;
+          ctx.globalAlpha = 1 - q * 0.6;
+          line(ctx, sx, ty, yx, ty);
+          ctx.fillRect(sx + (yx - sx) * q - 1.5, ty - 1.5, 3, 3);
+        }
+        ctx.globalAlpha = 1;
+      }
+    },
+
     // Insider Flagger: Monte Carlo fan of random PnL walks, one path that shouldn't exist
     montecarlo(ctx, W, H, o) {
       const { t, rand } = o;
